@@ -1,49 +1,56 @@
-<%= form_for(@song) do |f| %>
-  <% if @song.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@song.errors.count, "error") %> prohibited this song from being saved:</h2>
-
-      <ul>
-      <% @song.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @song, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :movie, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :movie, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :composer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :composer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :singer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :singer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lyricist, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lyricist, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :year, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :raaga, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :raaga, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :movie %><br>
-    <%= f.text_field :movie %>
-  </div>
-  <div class="field">
-    <%= f.label :composer %><br>
-    <%= f.text_field :composer %>
-  </div>
-  <div class="field">
-    <%= f.label :singer %><br>
-    <%= f.text_field :singer %>
-  </div>
-  <div class="field">
-    <%= f.label :lyricist %><br>
-    <%= f.text_field :lyricist %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.text_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :language %><br>
-    <%= f.text_field :language %>
-  </div>
-  <div class="field">
-    <%= f.label :raaga %><br>
-    <%= f.text_field :raaga %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                songs_path, :class => 'btn' %>
   </div>
 <% end %>
