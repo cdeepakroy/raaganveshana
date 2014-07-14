@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @song.title %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @song.movie %>
+</p>
+
+<p>
+  <strong>Composer:</strong>
+  <%= @song.composer %>
+</p>
+
+<p>
+  <strong>Singer:</strong>
+  <%= @song.singer %>
+</p>
+
+<p>
+  <strong>Lyricist:</strong>
+  <%= @song.lyricist %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @song.year %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @song.language %>
+</p>
+
+<p>
+  <strong>Raaga:</strong>
+  <%= @song.raaga %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
